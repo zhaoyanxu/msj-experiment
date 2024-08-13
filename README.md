@@ -15,12 +15,19 @@ The attack poses significant risks, including the generation of harmful content,
 ## Detection Strategies
 To detect such attacks, it is essential to analyze the context window for anomalous patterns that could indicate a jailbreaking attempt. A proposed strategy involves:
 
-### Pattern Recognition
 
+
+### Data Collection
+1. Collect attack vectors for malicious prompt. There are some repos and datasets available [dataset](https://github.com/centerforaisafety/HarmBench/blob/main/data/behavior_datasets/harmbench_behaviors_text_all.csv) [tool1](https://github.com/BronyaCat/Many-Shot-Generator) [tool2](https://github.com/Azure/PyRIT/tree/main)
+
+### Pattern Recognition
 1. Implement a pattern recognition system that scans the context for sequences known to lead to unsafe outputs.
 2. Contextual Integrity Checks: Use algorithms to monitor the logical consistency and safety of the context as it evolves, flagging unusual patterns.
 3. Anomaly Detection: Apply machine learning models to detect deviations from normal behavior in the AI's response generation process.
 
+### LLM Model for Detection
+
+1. Fine-tune the LLM using the annotated dataset. This involves adjusting the model's parameters to improve its ability to detect jailbreak attempts. Use techniques like supervised learning, where the model learns to predict labels based on the input data. 
 
 ## Mitigation Techniques
 Mitigation can be achieved by:
